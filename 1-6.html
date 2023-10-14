@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function solution(arr){
+        let odd = arr.filter(n => n % 2)
+        let sum = odd.reduce((acc, cur) => acc + cur, 0);
+        let min = Math.min(...odd);
+
+        return `${sum}\n${min}` ;
+    }
+
+    arr=[12, 77, 38, 41, 53, 92, 85];
+    console.log(solution(arr));
+</script>
+</body>
+</html>
