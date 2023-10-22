@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function solution(arr){
+        let answer;
+        const sortedArr = arr.slice().sort((a, b) => b - a);
+        let rankMap = {};
+        sortedArr.forEach((score, idx) => {
+            if (!rankMap[score]) {
+                rankMap[score] = idx + 1;
+            }
+        })
+        answer = arr.map(score => rankMap[score])
+        return answer.join(" ");
+    }
+
+    let arr=[87, 89, 92, 100, 76];
+    console.log(solution(arr));
+</script>
+</body>
+</html>
